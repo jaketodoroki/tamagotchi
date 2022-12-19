@@ -22,6 +22,13 @@ const lowerHunger = function(){
 const hungerTime = () => {
     hungerTime = setInterval(lowerHunger, 1200)
 } 
+//sick function
+const sick = function(){
+    if(Math.floor((10)) %2=== 0){
+        return true
+    }
+    return false
+}
 
 // query selector 
 //health
