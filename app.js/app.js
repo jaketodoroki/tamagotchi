@@ -10,6 +10,18 @@ let timer = 5000
 //event listeners
 
 // funtions 
+//hunger function
+const lowerHunger = function(){
+    hunger -= 20
+    if (hunger <= 0){
+        clearInterval(hungerTime)
+        triggerAllert()
+    }
+}
+
+const hungerTime = () => {
+    hungerTime = setInterval(lowerHunger, 1200)
+} 
 
 // query selector 
 //health
