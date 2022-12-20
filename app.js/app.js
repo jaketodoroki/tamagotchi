@@ -2,14 +2,19 @@ console.log('gelp')
 
 //variables 
 
-let health = 100
-let happiness = 100
-let hunger = 100
-let timer = 5000 
+let health ,happiness, hunger, timer
 
 //event listeners
+document.getElementById("health").addEventListener("click")
+document.getElementById("happiness").addEventListener("click")
+document.getElementById("hunger").addEventListener("click")
+// query selector
 
 // funtions 
+function play (){
+
+}
+
 //hunger function
 const lowerHunger = function(){
     hunger -= 20
@@ -29,9 +34,12 @@ const sick = function(){
     }
     return false
 }
+//happiness function
+const happy = function (){
+    if(health < 60 || hunger < 60 || happiness < 60){
+        happiness -= 20
+        //switch image, need to figure out how to add my gif
+    }
+}
 
-// query selector 
-//health
-let healthy = document.querySelector('#health');
-healthy.setAttribute('class','health');
-healthy.innerHTML = `Happiness: ${health}`
+
