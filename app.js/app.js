@@ -5,11 +5,18 @@ console.log('gelp')
 let health ,happiness, hunger, timer
 
 //cached element references
-const healthBtn = document.getElementById("health")
-const happinessBtn = document.getElementById("happiness")
-const hungerBtn = document.getElementById("hunger")
-// event listeners
+const playBtn = document.getElementById("play")
+const petBtn = document.getElementById("pet")
+const feedBtn = document.getElementById("feed")
+const cleanBtn = document.getElementById("clean")
+const resetBtn = document.getElementById("reset")
+const happinessBar = document.getElementById("happinessBar")
+const hungerBar = document.getElementById("hungerBar")
+const cleanlinessBar = document.getElementById("cleanlinessBar")
 
+// event listeners
+playBtn.addEventListener("click",startGame)
+healthBtn.addEventListener("click", )
 
 // funtions 
 function init (){
