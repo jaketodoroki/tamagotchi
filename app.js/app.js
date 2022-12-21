@@ -4,6 +4,12 @@ console.log('gelp')
 
 let health ,happiness, hunger, timer
 
+//time variables
+let feedTmr = 10
+let happyTmr = 10
+let cleanTmr = 10
+
+
 //cached element references
 const playBtn = document.getElementById("play")
 const petBtn = document.getElementById("pet")
