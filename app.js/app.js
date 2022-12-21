@@ -15,8 +15,12 @@ const hungerBar = document.getElementById("hungerBar")
 const cleanlinessBar = document.getElementById("cleanlinessBar")
 
 // event listeners
-playBtn.addEventListener("click",startGame)
-healthBtn.addEventListener("click", )
+playBtn.addEventListener("click", startGame)
+petBtn.addEventListener("click", pet )
+feedBtn.addEventListener("click", feed)
+cleanBtn.addEventListener("click", clean)
+resetBtn.addEventListener("click", resetGame)
+
 
 // funtions 
 function init (){
