@@ -11,21 +11,27 @@ document.getElementById("hunger").addEventListener("click")
 // query selector
 
 // funtions 
+function init (){
+    hunger = 50
+    happiness = 50
+    hunger = 50
+}
+
+
 function play (){
 
 }
 
 //hunger function
-const lowerHunger = function(){
-    hunger -= 20
-    if (hunger <= 0){
-        clearInterval(hungerTime)
-        triggerAllert()
-    }
-}
 
-const hungerTime = () => {
-    hungerTime = setInterval(lowerHunger, 1200)
+function hungerTime (){
+    if (hunger >= 100) {
+        hunger = 100;
+    }
+    if (hunger !== 49){
+        hunger -= 49;
+        // hungerMsg.textContent = 
+    }
 } 
 //sick function
 const sick = function(){
