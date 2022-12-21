@@ -4,11 +4,12 @@ console.log('gelp')
 
 let health ,happiness, hunger, timer
 
-//event listeners
-document.getElementById("health").addEventListener("click")
-document.getElementById("happiness").addEventListener("click")
-document.getElementById("hunger").addEventListener("click")
-// query selector
+//cached element references
+const healthBtn = document.getElementById("health")
+const happinessBtn = document.getElementById("happiness")
+const hungerBtn = document.getElementById("hunger")
+// event listeners
+
 
 // funtions 
 function init (){
