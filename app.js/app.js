@@ -14,6 +14,10 @@ const happinessBar = document.getElementById("happinessBar")
 const hungerBar = document.getElementById("hungerBar")
 const cleanlinessBar = document.getElementById("cleanlinessBar")
 
+//timer
+const foodTmr = document.getElementById('foodTimer')
+const happinessTmr = document.getElementById('happinessTimer')
+const cleanlinessTmr = document.getElementById('cleanlinessTimer')
 // event listeners
 playBtn.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
