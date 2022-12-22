@@ -46,7 +46,23 @@ function init (){
 }
 
 
-function play (){
+function startGame``(){
+
+}
+
+function pet(){
+
+}
+
+function feed(){
+
+}
+
+function clean(){
+
+}
+
+function resetGame(){
 
 }
 
