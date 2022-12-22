@@ -26,7 +26,10 @@ const cleanlinessBar = document.getElementById("cleanlinessBar")
 const foodcontainer = document.getElementById('hungerContainer')
 const happinessContainer = document.getElementById('happinessContainer')
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
-//
+// animations
+const happyAnimation = "../Assets/happy.gif"
+const sadAnimation = "../Assets/sad.gif"
+const normalAnimation = "../Assets/normal.gif"
 // event listeners
 playBtn.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
