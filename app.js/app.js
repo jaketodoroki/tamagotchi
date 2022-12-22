@@ -6,7 +6,7 @@ let health
 let happiness
 let hunger 
 let timer
-
+let clean
 //time variables
 let feedTmr = 10
 let happyTmr = 10
@@ -56,11 +56,20 @@ resetBtn.addEventListener("click", resetGame)
 
 // funtions 
 function init (){
-    hunger = 50
-    happiness = 50
-    hunger = 50
+    hunger = 20
+    happiness = 20
+    cleanliness = 20
 }
 
+function moodAnimation(){
+    if (happiness < 30 || hunger < 30 || cleanliness < 30){
+      img.src = "Assets/sad.gif"
+    } else {
+        if (happiness < 50 || hunger < 50 || cleanliness < 50)
+        img.src = "Assets/happy.gif"
+    }  
+
+}
 
 function startGame(){
     
@@ -68,17 +77,18 @@ function startGame(){
 
 function pet(){
    console.log("🚀 ~ file: app.js:70 ~ pet ~ pet", pet)
-   
-    happiness = happiness + 10
+    if (hunger !== 0){
+        hunger +=10;
+    }
 }
 
 function feed(){
     hunger = hunger + 10
 }
 
-function clean(){
-    clean = clean + 10
-}
+// function clean(){
+//     clean = clean + 10
+// }
 
 function resetGame(){
 
