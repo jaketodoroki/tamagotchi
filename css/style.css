@@ -1,0 +1,13 @@
+.stats{
+    border: 3px solid;
+}
+#hungerContainer{
+    border: 1px solid;
+    background-color: red;
+}
+#happinessContainer{
+    background-color: red;
+}
+#cleanlinessContainer{
+    background-color: red;
+}
