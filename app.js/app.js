@@ -2,7 +2,10 @@ console.log('gelp')
 
 //variables 
 
-let health ,happiness, hunger, timer
+let health 
+let happiness
+let hunger 
+let timer
 
 //time variables
 let feedTmr = 10
@@ -19,11 +22,11 @@ const resetBtn = document.getElementById("reset")
 const happinessBar = document.getElementById("happinessBar")
 const hungerBar = document.getElementById("hungerBar")
 const cleanlinessBar = document.getElementById("cleanlinessBar")
-
-//timer
-const foodTmr = document.getElementById('hungerContainer')
-const happinessTmr = document.getElementById('happinessContainer')
-const cleanlinessTmr = document.getElementById('cleanlinessContainer')
+//stat bars
+const foodcontainer = document.getElementById('hungerContainer')
+const happinessContainer = document.getElementById('happinessContainer')
+const cleanlinessContainer = document.getElementById('cleanlinessContainer')
+//
 // event listeners
 playBtn.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
