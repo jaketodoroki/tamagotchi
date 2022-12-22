@@ -5,7 +5,6 @@ console.log('gelp')
 let health 
 let happiness
 let hunger 
-let timer
 let cleanliness
 // let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
@@ -108,30 +107,32 @@ function resetGame(){
 
 }
 
-//hunger function
+//hunger timer function
+let feedTmrLeft = setInterval(() => {
+    feedTmr -= 1
+    // console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
+    if (feedTmr === 0){
+        clearInterval(feedTmrLeft)
+    }
+}, 1000);
+//clean timer function
+let cleanTmrLeft = setInterval(() => {
+    cleanTmr -= 1
+    // console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
+    if (cleanTmr === 0){
+        clearInterval(cleanTmrLeft)
+    }
+}, 1000);
+//happy timer function 
+let happyTmrLeft = setInterval(() => {
+    happyTmr -= 1
+    // console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
+    if (happyTmr === 0){
+        clearInterval(happyTmrLeft)
+    }
+}, 1000);
 
-function hungerTime (){
-    if (hunger >= 100) {
-        hunger = 100;
-    }
-    if (hunger !== 49){
-        hunger -= 49;
-        // hungerMsg.textContent = 
-    }
-} 
-//sick function
-const sick = function(){
-    if(Math.floor((10)) %2=== 0){
-        return true
-    }
-    return false
-}
-//happiness function
-const happy = function (){
-    if(health < 60 || hunger < 60 || happiness < 60){
-        happiness -= 20
-        //switch image, need to figure out how to add my gif
-    }
-}
+
+
 
 
