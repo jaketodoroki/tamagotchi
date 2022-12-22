@@ -2,10 +2,10 @@ console.log('gelp')
 
 //variables 
 
-let health 
-let happiness
-let hunger 
-let cleanliness
+// let health = 50
+let happiness = 50
+let hunger = 50
+let cleanliness = 50
 // let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
 let feedTmr = 10
@@ -14,7 +14,7 @@ let cleanTmr = 10
 
 
 //cached element references
-const playBtn = document.getElementById("play")
+const play = document.getElementById("play")
 // console.log("🚀 ~ file: app.js:18 ~ playBtn", playBtn)
 const petBtn = document.getElementById("pet")
 // console.log("🚀 ~ file: app.js:20 ~ petBtn", petBtn)
@@ -46,7 +46,7 @@ const img = document.getElementById("parent-img")
 // const normalAnimation = "../Assets/normal.gif"
 // // console.log("🚀 ~ file: app.js:46 ~ normalAnimation", normalAnimation)
 // // event listeners
-playBtn.addEventListener("click", startGame)
+play.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
@@ -78,9 +78,9 @@ function moodAnimation(){
 
 }
 
-function startGame(){
+
     
-}
+
 
 function pet(){
 //    console.log("🚀 ~ file: app.js:70 ~ pet ~ pet", pet)
@@ -108,10 +108,14 @@ function resetGame(){
 }
 
 //hunger timer function
+function startGame(){
+    console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
+    
 let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
-    // console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
+    console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
     if (feedTmr === 0){
+        hunger -= 10;
         clearInterval(feedTmrLeft)
     }
 }, 1000);
@@ -120,6 +124,7 @@ let cleanTmrLeft = setInterval(() => {
     cleanTmr -= 1
     // console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
     if (cleanTmr === 0){
+        cleanliness -= 10;
         clearInterval(cleanTmrLeft)
     }
 }, 1000);
@@ -128,9 +133,11 @@ let happyTmrLeft = setInterval(() => {
     happyTmr -= 1
     // console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
     if (happyTmr === 0){
+        happiness -= 10;
         clearInterval(happyTmrLeft)
     }
 }, 1000);
+}
 
 
 
