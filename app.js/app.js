@@ -6,7 +6,8 @@ let health
 let happiness
 let hunger 
 let timer
-let clean
+let cleanliness
+// let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
 let feedTmr = 10
 let happyTmr = 10
@@ -38,16 +39,16 @@ const happinessContainer = document.getElementById('happinessContainer')
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
 // console.log("🚀 ~ file: app.js:39 ~ cleanlinessContainer", cleanlinessContainer)
 // animations
-const happyAnimation = "../Assets/happy.gif"
-// console.log("🚀 ~ file: app.js:42 ~ happyAnimation", happyAnimation)
-const sadAnimation = "../Assets/sad.gif"
-// console.log("🚀 ~ file: app.js:44 ~ sadAnimation", sadAnimation)
-const normalAnimation = "../Assets/normal.gif"
-// console.log("🚀 ~ file: app.js:46 ~ normalAnimation", normalAnimation)
-// event listeners
+const img = document.getElementById("parent-img")
+// const happyAnimation = "../Assets/happy.gif"
+// // console.log("🚀 ~ file: app.js:42 ~ happyAnimation", happyAnimation)
+// const sadAnimation = "../Assets/sad.gif"
+// // console.log("🚀 ~ file: app.js:44 ~ sadAnimation", sadAnimation)
+// const normalAnimation = "../Assets/normal.gif"
+// // console.log("🚀 ~ file: app.js:46 ~ normalAnimation", normalAnimation)
+// // event listeners
 playBtn.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
-console.log("🚀 ~ file: app.js:50 ~ petBtn", petBtn)
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
 resetBtn.addEventListener("click", resetGame)
@@ -55,19 +56,26 @@ resetBtn.addEventListener("click", resetGame)
 
 
 // funtions 
+init()
+
 function init (){
-    hunger = 20
-    happiness = 20
-    cleanliness = 20
+    hunger = 100;
+    happiness = 100;
+    cleanliness = 100;
+    moodAnimation();
+}
+function render (){
+
 }
 
 function moodAnimation(){
     if (happiness < 30 || hunger < 30 || cleanliness < 30){
-      img.src = "Assets/sad.gif"
-    } else {
-        if (happiness < 50 || hunger < 50 || cleanliness < 50)
+      img.src= "Assets/sad.gif"
+    } else if(happiness < 50 || hunger < 50 || cleanliness < 50) {
+        img.src = "Assets/normal.gif"
+    }  else if(happiness > 70 || hunger > 70 || cleanliness > 70) {
         img.src = "Assets/happy.gif"
-    }  
+    }
 
 }
 
@@ -76,19 +84,25 @@ function startGame(){
 }
 
 function pet(){
-   console.log("🚀 ~ file: app.js:70 ~ pet ~ pet", pet)
-    if (hunger !== 0){
-        hunger +=10;
+//    console.log("🚀 ~ file: app.js:70 ~ pet ~ pet", pet)
+    if (happiness !== 0){
+        happiness +=10;
     }
 }
 
 function feed(){
-    hunger = hunger + 10
+    // console.log("🚀 ~ file: app.js:90 ~ feed ~ feed", feed)
+    if (hunger !== 0){
+        hunger +=10
+    }
+}
+function clean(){
+    // console.log("🚀 ~ file: app.js:96 ~ clean ~ clean", clean)
+    if(cleanliness !== 0){
+        cleanliness += 10
+    }
 }
 
-// function clean(){
-//     clean = clean + 10
-// }
 
 function resetGame(){
 

@@ -8,7 +8,7 @@ JS, HTML, CSS
 
 ---
 ## Future enhancemennts: 
-I would like to add a level up function, that changes the state of the pet similar to the original tamagotchi, i would also like to add music.
+I would like to add a level up function, that changes the state of the pet similar to the original tamagotchi, I would also like to add music.
 
 ---
 ## deployment link: 
