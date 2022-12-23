@@ -52,14 +52,17 @@ h2, h3, h4{
 h3{
     background-color: gainsboro;
     border-radius: 10%;
+    font-family: 'Chivo Mono', monospace;
 }
 h4{
     border-top: 1px;
     border-bottom: 1px dotted;
+    font-family: 'Chivo Mono', monospace;
 }
 h2{
     border-top: 2px solid;
     border-bottom: 2px solid;
+    font-family: 'Chivo Mono', monospace;
 }
 div.buttons {
     text-align: center;

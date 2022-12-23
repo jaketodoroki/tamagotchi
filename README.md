@@ -6,6 +6,8 @@ A basic virtual pet simulator, you need to take care of pet needs in order to be
 ---
 ## Technologies used: 
 JS, HTML, CSS
+Rubik 80s Fade - font
+
 
 ---
 ## Future enhancemennts: 
