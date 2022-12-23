@@ -6,13 +6,18 @@ A basic virtual pet simulator, you need to take care of pet needs in order to be
 ---
 ## Technologies used: 
 JS, HTML, CSS
-Rubik 80s Fade - font
+
+---
+
+## Credit
+Rubik 80s Fade - google font
+Chivo mono - google font
 
 
 ---
 ## Future enhancemennts: 
-I would like to add a level up function, that changes the state of the pet similar to the original tamagotchi, I would also like to add music.
-
----
+- Game sound
+- Level up function
+- Styling 
 ## deployment link: 
 https://jake-todoroki-tamagotchi.netlify.app/
