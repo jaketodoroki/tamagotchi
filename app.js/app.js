@@ -12,9 +12,9 @@ let feedTmr = 50
 let happyTmr = 50
 let cleanTmr = 50
 let maxTime = 50
-const maxHappiness = 100
-const maxHunger = 100
-const maxCleanliness = 100
+const maxHappiness = 50
+const maxHunger = 50
+const maxCleanliness = 50
 //cached element references
 const play = document.getElementById("play")
 // console.log("🚀 ~ file: app.js:18 ~ playBtn", playBtn)
@@ -117,14 +117,14 @@ function resetGame(){
 
 //hunger timer function
 function startGame(){
-    moodAnimation()
+    // moodAnimation()
     render()
     // console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
 let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
     console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
-    if (feedTmr === 0 || feedTmr === 40 || feedTmr === 46){
-        hunger -= 20;
+    if (feedTmr === 0 || feedTmr === 30 || feedTmr === 47){
+        hunger -= 8;
         hungerContainer.style.width = `${hunger}%`
         clearInterval(feedTmrLeft)
     }
@@ -133,8 +133,8 @@ let feedTmrLeft = setInterval(() => {
 let cleanTmrLeft = setInterval(() => {
     cleanTmr -= 1
     console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
-    if (cleanTmr === 0 || cleanTmr === 40 || cleanTmr === 48){
-        cleanliness -= 30;
+    if (cleanTmr === 0 || cleanTmr === 30 || cleanTmr === 48){
+        cleanliness -= 10;
         cleanlinessContainer.style.width = `${cleanliness}%`
         clearInterval(cleanTmrLeft)
     }
@@ -143,8 +143,8 @@ let cleanTmrLeft = setInterval(() => {
 let happyTmrLeft = setInterval(() => {
     happyTmr -= 1
     console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
-    if (happyTmr === 0 || happyTmr === 40 || happyTmr === 47){
-        happiness -= 25;
+    if (happyTmr === 0 || happyTmr === 30 || happyTmr === 47){
+        happiness -= 9;
         happinessContainer.style.width = `${happiness}%`
         clearInterval(happyTmrLeft)
     }
