@@ -74,7 +74,7 @@ function moodAnimation(){
       img.src= "Assets/sad.gif"
     } else if(happiness < 45 || hunger < 45 || cleanliness < 45) {
         img.src = "Assets/normal.gif"
-    }  else if(happiness > 60 || hunger > 60 || cleanliness > 60) {
+    }  else if(happiness >= 50 || hunger >= 50 || cleanliness >= 50) {
         img.src = "Assets/happy.gif"
     }
 
@@ -111,13 +111,14 @@ function clean(){
 function resetGame(){
     // console.log("🚀 ~ file: app.js:112 ~ reset ~ reset", reset)
     // init()
-    render()
+    // render()
     // startGame()
 }
 
 //hunger timer function
 function startGame(){
     moodAnimation()
+    render()
     // console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
 let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
