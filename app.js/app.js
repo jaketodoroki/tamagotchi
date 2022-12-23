@@ -17,44 +17,25 @@ const maxHunger = 50
 const maxCleanliness = 50
 //cached element references
 const play = document.getElementById("play")
-// console.log("🚀 ~ file: app.js:18 ~ playBtn", playBtn)
 const petBtn = document.getElementById("pet")
-// console.log("🚀 ~ file: app.js:20 ~ petBtn", petBtn)
 const feedBtn = document.getElementById("feed")
-// console.log("🚀 ~ file: app.js:22 ~ feedBtn", feedBtn)
 const cleanBtn = document.getElementById("clean")
-// console.log("🚀 ~ file: app.js:24 ~ cleanBtn", cleanBtn)
 const reset = document.getElementById("reset")
-// console.log("🚀 ~ file: app.js:26 ~ resetBtn", reset)
 const happinessBar = document.getElementById("happinessBar")
-// console.log("🚀 ~ file: app.js:28 ~ happinessBar", happinessBar)
 const hungerBar = document.getElementById("hungerBar")
-// console.log("🚀 ~ file: app.js:30 ~ hungerBar", hungerBar)
 const cleanlinessBar = document.getElementById("cleanlinessBar")
-// console.log("🚀 ~ file: app.js:32 ~ cleanlinessBar", cleanlinessBar)
-//stat bars
 const foodcontainer = document.getElementById('hungerContainer')
-// console.log("🚀 ~ file: app.js:35 ~ foodcontainer", foodcontainer)
 const happinessContainer = document.getElementById('happinessContainer')
-// console.log("🚀 ~ file: app.js:37 ~ happinessContainer", happinessContainer)
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
-// console.log("🚀 ~ file: app.js:39 ~ cleanlinessContainer", cleanlinessContainer)
 // animations
 const img = document.getElementById("parent-img")
-// const happyAnimation = "../Assets/happy.gif"
-// // console.log("🚀 ~ file: app.js:42 ~ happyAnimation", happyAnimation)
-// const sadAnimation = "../Assets/sad.gif"
-// // console.log("🚀 ~ file: app.js:44 ~ sadAnimation", sadAnimation)
-// const normalAnimation = "../Assets/normal.gif"
-// // console.log("🚀 ~ file: app.js:46 ~ normalAnimation", normalAnimation)
-// // event listeners
+
+//  event listeners
 play.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
 reset.addEventListener("click", resetGame)
-// console.log("🚀 ~ file: app.js:57 ~ reset", reset)
-// console.log("🚀 ~ file: app.js:57 ~ resetBtn", resetBtn)
 
 
 
