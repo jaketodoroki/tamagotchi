@@ -3,9 +3,9 @@ console.log('gelp')
 //variables 
 
 // let health = 50
-let happiness = 100
-let hunger = 100
-let cleanliness = 100
+let happiness = 50
+let hunger = 50
+let cleanliness = 50
 // let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
 let feedTmr = 50
@@ -70,11 +70,11 @@ function render (){
 }
 
 function moodAnimation(){
-    if (happiness < 30 || hunger < 30 || cleanliness < 30){
+    if (happiness < 50 || hunger < 50 || cleanliness < 50){
       img.src= "Assets/sad.gif"
-    } else if(happiness < 50 || hunger < 50 || cleanliness < 50) {
+    } else if(happiness < 45 || hunger < 45 || cleanliness < 45) {
         img.src = "Assets/normal.gif"
-    }  else if(happiness > 70 || hunger > 70 || cleanliness > 70) {
+    }  else if(happiness > 60 || hunger > 60 || cleanliness > 60) {
         img.src = "Assets/happy.gif"
     }
 
@@ -117,12 +117,13 @@ function resetGame(){
 
 //hunger timer function
 function startGame(){
+    moodAnimation()
     // console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
 let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
     console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
-    if (feedTmr === 0){
-        hunger -= 10;
+    if (feedTmr === 0 || feedTmr === 40 || feedTmr === 46){
+        hunger -= 20;
         hungerContainer.style.width = `${hunger}%`
         clearInterval(feedTmrLeft)
     }
@@ -131,8 +132,8 @@ let feedTmrLeft = setInterval(() => {
 let cleanTmrLeft = setInterval(() => {
     cleanTmr -= 1
     console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
-    if (cleanTmr === 0){
-        cleanliness -= 20;
+    if (cleanTmr === 0 || cleanTmr === 40 || cleanTmr === 48){
+        cleanliness -= 30;
         cleanlinessContainer.style.width = `${cleanliness}%`
         clearInterval(cleanTmrLeft)
     }
@@ -141,8 +142,8 @@ let cleanTmrLeft = setInterval(() => {
 let happyTmrLeft = setInterval(() => {
     happyTmr -= 1
     console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
-    if (happyTmr === 0){
-        happiness -= 15;
+    if (happyTmr === 0 || happyTmr === 40 || happyTmr === 47){
+        happiness -= 25;
         happinessContainer.style.width = `${happiness}%`
         clearInterval(happyTmrLeft)
     }
