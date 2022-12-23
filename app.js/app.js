@@ -3,16 +3,18 @@ console.log('gelp')
 //variables 
 
 // let health = 50
-let happiness = 50
-let hunger = 50
-let cleanliness = 50
+let happiness = 100
+let hunger = 100
+let cleanliness = 100
 // let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
-let feedTmr = 10
-let happyTmr = 10
-let cleanTmr = 10
-
-
+let feedTmr = 50
+let happyTmr = 50
+let cleanTmr = 50
+let maxTime = 50
+const maxHappiness = 100
+const maxHunger = 100
+const maxCleanliness = 100
 //cached element references
 const play = document.getElementById("play")
 // console.log("🚀 ~ file: app.js:18 ~ playBtn", playBtn)
@@ -22,8 +24,8 @@ const feedBtn = document.getElementById("feed")
 // console.log("🚀 ~ file: app.js:22 ~ feedBtn", feedBtn)
 const cleanBtn = document.getElementById("clean")
 // console.log("🚀 ~ file: app.js:24 ~ cleanBtn", cleanBtn)
-const resetBtn = document.getElementById("reset")
-// console.log("🚀 ~ file: app.js:26 ~ resetBtn", resetBtn)
+const reset = document.getElementById("reset")
+// console.log("🚀 ~ file: app.js:26 ~ resetBtn", reset)
 const happinessBar = document.getElementById("happinessBar")
 // console.log("🚀 ~ file: app.js:28 ~ happinessBar", happinessBar)
 const hungerBar = document.getElementById("hungerBar")
@@ -50,21 +52,21 @@ play.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
-resetBtn.addEventListener("click", resetGame)
+reset.addEventListener("click", resetGame)
+// console.log("🚀 ~ file: app.js:57 ~ reset", reset)
+// console.log("🚀 ~ file: app.js:57 ~ resetBtn", resetBtn)
 
 
 
 // funtions 
-init()
+// render()
 
-function init (){
-    moodAnimation();
-    render()
-}
 function render (){
-    hunger = 100;
-    happiness = 100;
-    cleanliness = 100;
+    moodAnimation();
+    hunger = maxHunger;
+    happiness = maxHappiness;
+    cleanliness = maxCleanliness;
+    timeLeft = maxTime
 }
 
 function moodAnimation(){
@@ -107,13 +109,15 @@ function clean(){
 
 
 function resetGame(){
-
+    // console.log("🚀 ~ file: app.js:112 ~ reset ~ reset", reset)
+    // init()
+    render()
+    // startGame()
 }
 
 //hunger timer function
 function startGame(){
     // console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
-    
 let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
     console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
@@ -121,7 +125,6 @@ let feedTmrLeft = setInterval(() => {
         hunger -= 10;
         hungerContainer.style.width = `${hunger}%`
         clearInterval(feedTmrLeft)
-        console.log("🚀 ~ file: app.js:121 ~ feedTmrLeft ~ hungerContainer", hungerContainer)
     }
 }, 1000);
 //clean timer function
@@ -129,23 +132,21 @@ let cleanTmrLeft = setInterval(() => {
     cleanTmr -= 1
     console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
     if (cleanTmr === 0){
-        cleanliness -= 10;
+        cleanliness -= 20;
         cleanlinessContainer.style.width = `${cleanliness}%`
         clearInterval(cleanTmrLeft)
-        console.log("🚀 ~ file: app.js:133 ~ cleanTmrLeft ~ cleanlinessContainer", cleanlinessContainer)
     }
-}, 1000);
+}, 2000);
 //happy timer function 
 let happyTmrLeft = setInterval(() => {
     happyTmr -= 1
     console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
     if (happyTmr === 0){
-        happiness -= 10;
+        happiness -= 15;
         happinessContainer.style.width = `${happiness}%`
         clearInterval(happyTmrLeft)
-        console.log("🚀 ~ file: app.js:144 ~ happyTmrLeft ~ happinessContainer", happinessContainer)
     }
-}, 1000);
+}, 1500);
 }
 
 
