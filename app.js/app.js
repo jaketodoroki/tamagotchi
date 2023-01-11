@@ -88,7 +88,7 @@ function resetGame(){
 function startGame(){
     let timer = setInterval(function (){
         moodAnimation()
-        countdown.textContent = timeLeft + 'seconds remaining'
+        countdown.textContent = timeLeft + ' Seconds Remaining'
         if(happiness <= 0 || hunger <= 0 || cleanliness <= 0){
             countdown.textContent = 'Game Over'
             clearInterval(timer)
@@ -114,7 +114,7 @@ function reduceContainer(){
 }
 
 function gameOver(){
-    jakeyStatus.innerHTML = 'You Lost!'
+    jakeyStatus.innerHTML = 'You Lost! Click Reset-Game to try again'
 }
 
 function gameWin(){

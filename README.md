@@ -4,6 +4,12 @@ A basic virtual pet simulator, you need to take care of pet needs in order to be
 
 ![alt text](https://github.com/jaketodoroki/tamagotchi/blob/main/Assets/Screenshot%202022-12-23%20at%2010.22.56%20AM.png)
 ---
+## Link to planning materials 
+https://docs.google.com/document/d/1AJbqsHMHE35Xe4ZyU03907qKxEa94y3F0raWaCqIeHc/edit?usp=sharing
+
+---
+
+
 ## Technologies used: 
 JS, HTML, CSS
 
