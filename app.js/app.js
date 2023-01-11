@@ -1,20 +1,13 @@
-console.log('gelp')
-
-//variables 
-
-// let health = 50
-let happiness = 50
-let hunger = 50
-let cleanliness = 50
-// let lose = health < 10; cleanliness < 10; happiness < 10
-//time variables
+let happiness = 100
+let hunger = 100
+let cleanliness = 100
 let timeLeft = 50
 
 const maxTime = 50
-const maxHappiness = 50
-const maxHunger = 50
-const maxCleanliness = 50
-//cached element references
+const maxHappiness = 100
+const maxHunger = 100
+const maxCleanliness = 100
+
 const play = document.getElementById("play")
 const petBtn = document.getElementById("pet")
 const feedBtn = document.getElementById("feed")
@@ -26,15 +19,14 @@ const cleanlinessContainer = document.getElementById('cleanlinessContainer')
 const status = document.getElementById('status')
 const btnSound = new Audio('Assets/button-sound.mp3')
 const countdown = document.getElementById('timeLeft')
-// animations
 const img = document.getElementById("parent-img")
 
-//  event listeners
 play.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
 resetBtn.addEventListener("click", resetGame)
+
 
 render()
 
@@ -59,6 +51,7 @@ function moodAnimation(){
     }
 
 }
+
 function playSoundbtn(){
     btnSound.volume = 1
     btnSound.play()
@@ -79,6 +72,7 @@ function feed(){
         playSoundbtn()
     }
 }
+
 function clean(){
     if(cleanliness !== 0){
         cleanliness += 10
@@ -126,6 +120,4 @@ function gameOver(){
 function gameWin(){
     jakeyStatus.innerHTML = 'You Won'
 }
-
-
 
