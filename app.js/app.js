@@ -48,12 +48,14 @@ function render (){
 
 function moodAnimation(){
     if (happiness < 30 || hunger < 30 || cleanliness < 30){
-      img.src= "Assets/sad.gif"
-      
+        img.src= "Assets/sad.gif"
+        jakeyStatus.innerHTML = 'Jakey Is Sad'
     } else if(happiness < 45 || hunger < 45 || cleanliness < 45) {
         img.src = "Assets/normal.gif"
+        jakeyStatus.innerHTML = 'Jakey Is Doing OK'
     }  else if(happiness >= 50 || hunger >= 50 || cleanliness >= 50) {
         img.src = "Assets/happy.gif"
+        jakeyStatus.innerHTML = 'Jakey Is Happy'
     }
 
 }
