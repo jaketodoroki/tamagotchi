@@ -24,7 +24,7 @@ const hungerContainer = document.getElementById('hungerContainer')
 const happinessContainer = document.getElementById('happinessContainer')
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
 const status = document.getElementById('status')
-
+const btnSound = new Audio('Assets/button-sound.mp3')
 const countdown = document.getElementById('timeLeft')
 // animations
 const img = document.getElementById("parent-img")
@@ -49,6 +49,7 @@ function render (){
 function moodAnimation(){
     if (happiness < 30 || hunger < 30 || cleanliness < 30){
       img.src= "Assets/sad.gif"
+      
     } else if(happiness < 45 || hunger < 45 || cleanliness < 45) {
         img.src = "Assets/normal.gif"
     }  else if(happiness >= 50 || hunger >= 50 || cleanliness >= 50) {
@@ -56,11 +57,16 @@ function moodAnimation(){
     }
 
 }
-    
+function playSoundbtn(){
+    btnSound.volume = 1
+    btnSound.play()
+}    
+
 function pet(){
     if (happiness !== 0){
         happiness +=10;
         happinessContainer.style.width = `${happiness}%`
+        playSoundbtn()
     }
 }
 
@@ -68,12 +74,14 @@ function feed(){
     if (hunger !== 0){
         hunger +=10
         hungerContainer.style.width = `${hunger}%`
+        playSoundbtn()
     }
 }
 function clean(){
     if(cleanliness !== 0){
         cleanliness += 10
         cleanlinessContainer.style.width = `${cleanliness}%`
+        playSoundbtn()
     }
 }
 
