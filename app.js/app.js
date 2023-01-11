@@ -19,10 +19,11 @@ const play = document.getElementById("play")
 const petBtn = document.getElementById("pet")
 const feedBtn = document.getElementById("feed")
 const cleanBtn = document.getElementById("clean")
-const reset = document.getElementById("reset")
+const resetBtn = document.getElementById("reset")
 const hungerContainer = document.getElementById('hungerContainer')
 const happinessContainer = document.getElementById('happinessContainer')
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
+const status = document.getElementById('status')
 
 const countdown = document.getElementById('timeLeft')
 // animations
@@ -33,7 +34,7 @@ play.addEventListener("click", startGame)
 petBtn.addEventListener("click", pet )
 feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
-reset.addEventListener("click", resetGame)
+resetBtn.addEventListener("click", resetGame)
 
 render()
 
@@ -46,7 +47,7 @@ function render (){
 }
 
 function moodAnimation(){
-    if (happiness < 50 || hunger < 50 || cleanliness < 50){
+    if (happiness < 30 || hunger < 30 || cleanliness < 30){
       img.src= "Assets/sad.gif"
     } else if(happiness < 45 || hunger < 45 || cleanliness < 45) {
         img.src = "Assets/normal.gif"
@@ -77,18 +78,14 @@ function clean(){
 }
 
 function resetGame(){
-    // init()
-    render()
-    // startGame()
+    location.reload()
 }
 
 function startGame(){
-    // render()
-    // moodAnimation()
     let timer = setInterval(function (){
         moodAnimation()
         countdown.textContent = timeLeft + 'seconds remaining'
-        if(happiness < 0 || hunger < 0 || cleanliness < 0){
+        if(happiness <= 0 || hunger <= 0 || cleanliness <= 0){
             countdown.textContent = 'Game Over'
             clearInterval(timer)
             gameOver()
@@ -104,20 +101,20 @@ function startGame(){
 }   
 
 function reduceContainer(){
-    happiness = happiness -1.25;
+    happiness = happiness -4;
     happinessContainer.style = `width:${happiness}%`
-    hunger = hunger -1.5;
+    hunger = hunger -2.5;
     hungerContainer.style = `width:${hunger}%`
-    cleanliness = cleanliness -1.75;
+    cleanliness = cleanliness -3.75;
     cleanlinessContainer.style = `width:${cleanliness}%`
 }
 
 function gameOver(){
-
+    jakeyStatus.innerHTML = 'You Lost!'
 }
 
 function gameWin(){
-    
+    jakeyStatus.innerHTML = 'You Won'
 }
 
 

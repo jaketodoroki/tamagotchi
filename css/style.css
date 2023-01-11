@@ -49,6 +49,10 @@ div.title{
 h2, h3, h4{
     text-align: center;
 }
+h5{
+    font-family: 'Chivo Mono', monospace;
+    padding: 10px;
+}
 h3{
     background-color: gainsboro;
     border-radius: 10%;
