@@ -10,7 +10,7 @@ let cleanliness = 50
 //time variables
 let timeLeft = 50
 
-
+const maxTime = 50
 const maxHappiness = 50
 const maxHunger = 50
 const maxCleanliness = 50
@@ -20,12 +20,11 @@ const petBtn = document.getElementById("pet")
 const feedBtn = document.getElementById("feed")
 const cleanBtn = document.getElementById("clean")
 const reset = document.getElementById("reset")
-const happinessBar = document.getElementById("happinessBar")
-const hungerBar = document.getElementById("hungerBar")
-const cleanlinessBar = document.getElementById("cleanlinessBar")
-const foodcontainer = document.getElementById('hungerContainer')
+const hungerContainer = document.getElementById('hungerContainer')
 const happinessContainer = document.getElementById('happinessContainer')
 const cleanlinessContainer = document.getElementById('cleanlinessContainer')
+
+const countdown = document.getElementById('timeLeft')
 // animations
 const img = document.getElementById("parent-img")
 
@@ -80,45 +79,46 @@ function clean(){
 function resetGame(){
     // init()
     render()
-    startGame()
+    // startGame()
 }
 
-//hunger timer function
 function startGame(){
-    render()
+    // render()
     // moodAnimation()
-    let feedTmrLeft = setInterval(() => {
-    feedTmr -= 1
-    console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
-    if (feedTmr === 0 || feedTmr === 30 || feedTmr === 47){
-        hunger -= 8;
-        hungerContainer.style.width = `${hunger}%`
-        clearInterval(feedTmrLeft)
-    }
-    }, 1000);
-//clean timer function
-    let cleanTmrLeft = setInterval(() => {
-    cleanTmr -= 1
-    console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
-    if (cleanTmr === 0 || cleanTmr === 30 || cleanTmr === 48){
-        cleanliness -= 10;
-        cleanlinessContainer.style.width = `${cleanliness}%`
-        clearInterval(cleanTmrLeft)
-    }
-    }, 2000);
-//happy timer function 
-    let happyTmrLeft = setInterval(() => {
-    happyTmr -= 1
-    console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
-    if (happyTmr === 0 || happyTmr === 30 || happyTmr === 47){
-        happiness -= 9;
-        happinessContainer.style.width = `${happiness}%`
-        clearInterval(happyTmrLeft)
-    }
-    }, 1500);
+    let timer = setInterval(function (){
+        moodAnimation()
+        countdown.textContent = timeLeft + 'seconds remaining'
+        if(happiness < 0 || hunger < 0 || cleanliness < 0){
+            countdown.textContent = 'Game Over'
+            clearInterval(timer)
+            gameOver()
+        }
+        reduceContainer()
+        timeLeft -= 1
+        if (timeLeft < 0){
+            countdown.textContent = 'You Win!! Jakey Loves You!'
+            clearInterval(timer)
+            gameWin()
+        }
+    }, 1000) 
+}   
+
+function reduceContainer(){
+    happiness = happiness -1.25;
+    happinessContainer.style = `width:${happiness}%`
+    hunger = hunger -1.5;
+    hungerContainer.style = `width:${hunger}%`
+    cleanliness = cleanliness -1.75;
+    cleanlinessContainer.style = `width:${cleanliness}%`
 }
 
+function gameOver(){
 
+}
+
+function gameWin(){
+    
+}
 
 
 
