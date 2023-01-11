@@ -8,10 +8,9 @@ let hunger = 50
 let cleanliness = 50
 // let lose = health < 10; cleanliness < 10; happiness < 10
 //time variables
-let feedTmr = 50
-let happyTmr = 50
-let cleanTmr = 50
-let maxTime = 50
+let timeLeft = 50
+
+
 const maxHappiness = 50
 const maxHunger = 50
 const maxCleanliness = 50
@@ -37,10 +36,7 @@ feedBtn.addEventListener("click", feed)
 cleanBtn.addEventListener("click", clean)
 reset.addEventListener("click", resetGame)
 
-
-
-// funtions 
-// render()
+render()
 
 function render (){
     moodAnimation();
@@ -60,13 +56,8 @@ function moodAnimation(){
     }
 
 }
-
-
     
-
-
 function pet(){
-//    console.log("🚀 ~ file: app.js:70 ~ pet ~ pet", pet)
     if (happiness !== 0){
         happiness +=10;
         happinessContainer.style.width = `${happiness}%`
@@ -74,34 +65,29 @@ function pet(){
 }
 
 function feed(){
-    // console.log("🚀 ~ file: app.js:90 ~ feed ~ feed", feed)
     if (hunger !== 0){
         hunger +=10
         hungerContainer.style.width = `${hunger}%`
     }
 }
 function clean(){
-    // console.log("🚀 ~ file: app.js:96 ~ clean ~ clean", clean)
     if(cleanliness !== 0){
         cleanliness += 10
         cleanlinessContainer.style.width = `${cleanliness}%`
     }
 }
 
-
 function resetGame(){
-    // console.log("🚀 ~ file: app.js:112 ~ reset ~ reset", reset)
     // init()
-    // render()
-    // startGame()
+    render()
+    startGame()
 }
 
 //hunger timer function
 function startGame(){
-    // moodAnimation()
     render()
-    // console.log("🚀 ~ file: app.js:112 ~ startGame ~ startGame", startGame)
-let feedTmrLeft = setInterval(() => {
+    // moodAnimation()
+    let feedTmrLeft = setInterval(() => {
     feedTmr -= 1
     console.log("🚀 ~ file: app.js:113 ~ feedTmrLeft ~ feedTmr", feedTmr)
     if (feedTmr === 0 || feedTmr === 30 || feedTmr === 47){
@@ -109,9 +95,9 @@ let feedTmrLeft = setInterval(() => {
         hungerContainer.style.width = `${hunger}%`
         clearInterval(feedTmrLeft)
     }
-}, 1000);
+    }, 1000);
 //clean timer function
-let cleanTmrLeft = setInterval(() => {
+    let cleanTmrLeft = setInterval(() => {
     cleanTmr -= 1
     console.log("🚀 ~ file: app.js:121 ~ cleanTmrLeft ~ cleanTmr", cleanTmr)
     if (cleanTmr === 0 || cleanTmr === 30 || cleanTmr === 48){
@@ -119,9 +105,9 @@ let cleanTmrLeft = setInterval(() => {
         cleanlinessContainer.style.width = `${cleanliness}%`
         clearInterval(cleanTmrLeft)
     }
-}, 2000);
+    }, 2000);
 //happy timer function 
-let happyTmrLeft = setInterval(() => {
+    let happyTmrLeft = setInterval(() => {
     happyTmr -= 1
     console.log("🚀 ~ file: app.js:129 ~ happyTmrLeft ~ happyTmr", happyTmr)
     if (happyTmr === 0 || happyTmr === 30 || happyTmr === 47){
@@ -129,7 +115,7 @@ let happyTmrLeft = setInterval(() => {
         happinessContainer.style.width = `${happiness}%`
         clearInterval(happyTmrLeft)
     }
-}, 1500);
+    }, 1500);
 }
 
 
